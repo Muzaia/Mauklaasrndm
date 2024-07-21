@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situs Komik</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang di Situs Komik</h1>
+    </header>
+    <main>
+        <section id="comic-list">
+            <h2>Daftar Komik</h2>
+            <ul id="comics">
+                <!-- Daftar komik akan diisi oleh JavaScript -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Situs Komik. Semua Hak Cipta Dilindungi.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+main {
+    padding: 1em;
+}
+
+#comic-list {
+    background-color: white;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#comic-list h2 {
+    margin-top: 0;
+}
+
+#comics {
+    list-style-type: none;
+    padding: 0;
+}
+
+#comics li {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#comics li:last-child {
+    border-bottom: none;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+document.addEventListener('DOMContentLoaded', function() {
+    const comics = [
+        { title: 'Naruto', author: 'Masashi Kishimoto' },
+        { title: 'One Piece', author: 'Eiichiro Oda' },
+        { title: 'Attack on Titan', author: 'Hajime Isayama' },
+        { title: 'Doraemon', author: 'Fujiko F. Fujio' }
+    ];
+
+    const comicList = document.getElementById('comics');
+
+    comics.forEach(function(comic) {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${comic.title} oleh ${comic.author}`;
+        comicList.appendChild(listItem);
+    });
+});
